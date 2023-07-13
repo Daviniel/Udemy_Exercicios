@@ -4,12 +4,13 @@
   margin: 50px auto;
   max-width: 500px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(253, 253, 253, 0.2);
 }
 
 .main h1 {
   font-size: 20px;
   text-align: center;
+  background-color: #fff;
 }
 
 .form {
