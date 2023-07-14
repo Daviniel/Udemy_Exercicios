@@ -29,7 +29,6 @@ export default class Main extends Component {
       novaTarefa: e.target.value,
     });
   };
-
   render() {
     const { novaTarefa, tarefas } = this.state;
 
@@ -49,7 +48,7 @@ export default class Main extends Component {
             <li key={tarefa}>
               {tarefa}
               <span>
-                <FaEdit className="edite" onClick={this.handleEdit} />
+                <FaEdit className="edit" onClick={this.handleEdit} />
                 <FaWindowClose className="delete" onClick={this.handleDelete} />
               </span>
             </li>
