@@ -6,7 +6,22 @@ import './Main.css';
 export default class Main extends Component {
   state = {
     novaTarefa: '',
-    tarefas: ['Tomar café', 'Atividades da udyme', 'Falar com meu amor'],
+    tarefas: [],
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { tarefas } = this.state;
+    let { novaTarefa } = this.state;
+    novaTarefa = novaTarefa.trim();
+
+    if (tarefas.indexOf(novaTarefa) !== -1) return;
+
+    const novasTarefas = [...tarefas];
+
+    this.setState({
+      tarefas: [...novasTarefas, novaTarefa],
+    });
   };
 
   handleChange = (e) => {
@@ -16,13 +31,13 @@ export default class Main extends Component {
   };
 
   render() {
-    const { novaTarefa } = this.state;
+    const { novaTarefa, tarefas } = this.state;
 
     return (
       <div className="main">
         <h1>Lista de Tarefas</h1>
 
-        <form action="#" className="form">
+        <form onSubmit={this.handleSubmit} action="#" className="form">
           <input onChange={this.handleChange} type="text" value={novaTarefa} />
           <button type="submit">
             <FaPlus />
@@ -34,8 +49,8 @@ export default class Main extends Component {
             <li key={tarefa}>
               {tarefa}
               <span>
-                <FaEdit className="edite" />
-                <FaWindowClose className="delete" />
+                <FaEdit className="edite" onClick={this.handleEdit} />
+                <FaWindowClose className="delete" onClick={this.handleDelete} />
               </span>
             </li>
           ))}
