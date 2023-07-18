@@ -2,37 +2,40 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
-    node: true,
   },
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:prettier/recommended',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
-    process: true,
-  },
-  parser: '@babel/eslint-parser',
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
+  extends: {
+    'airbnb',
+    'prettier',
+    'prettier/react'
+  }
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: [
+        '.eslintrc.{js,cjs}',
+      ],
+      parserOptions: {
+        sourceType: 'script',
+      },
     },
+  ],
+  parser: 'babel/eslint',
+  parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier', 'react-hooks'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
+  plugin: {
+    'react',
+    'prettier',
+    'react-hooks'
+  }
   rules: {
-    'react/react-in-jsx-scope': 'off',
-    'react/state-in-constructor': 'off',
-    'react/forbid-prop-types': 'off',
+    'prettier/prettier': 'error',
+    'react/jsx-filename-extension': 0,
+    'import/prefer-default-export': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-dops': 'warn'
   },
 };
