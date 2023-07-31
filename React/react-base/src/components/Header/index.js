@@ -5,7 +5,7 @@ import { Nav } from './styled';
 import { userSelector } from 'react-redux';
 
 export default function Header() {
-  const botaoClicado = userSelector(state => state.botaoClicado);
+  const botaoClicado = userSelector(state => state.example.botaoClicado);
   return (
     <Nav>
       <Link to="/"><FaHome size={24} /></Link>
