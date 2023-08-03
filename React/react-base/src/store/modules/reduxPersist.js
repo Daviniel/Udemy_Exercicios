@@ -2,7 +2,7 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 export default reducers => {
-  const persistReducers = persistReducer(
+  const persistedReducers = persistReducer(
     {
       key: 'REACT-BASE',
       storage,
@@ -11,5 +11,5 @@ export default reducers => {
     reducers
   );
 
-  return persistReducers;
+  return persistedReducers;
 };

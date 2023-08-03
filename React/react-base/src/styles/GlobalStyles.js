@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import * as colors from '../config/colors';
-import 'react-toastify/dist/react-toastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   * {
@@ -54,5 +54,5 @@ export const Container = styled.section`
   margin: 30px auto;
   padding: 30px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
