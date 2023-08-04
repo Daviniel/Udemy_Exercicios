@@ -9,7 +9,6 @@
         "sourceType": "module"
     },
     "rules": {
-      "prettier/prettier": 0,
       "react/jsx-filename-extension": 0,
       "import/prefer-default-export": 0,
       "react-hooks/rules-of-hooks": 0,
