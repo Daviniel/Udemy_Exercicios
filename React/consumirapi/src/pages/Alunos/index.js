@@ -28,9 +28,9 @@ export default function Alunos() {
           <div key={String(aluno.id)}>
             <ProfilePicture>
               {get(aluno, 'Fotos[0].url', false) ? (
-                <img src='' />  {/* aqui será adicionado as imagens dos alunos */}
-              ): (
-              <FaUserCircle size={36} />
+                <img src='' />  /* aqui será adicionado as imagens dos alunos */
+              ) : (
+                <FaUserCircle size={36} />
               )}
             </ProfilePicture>
 
