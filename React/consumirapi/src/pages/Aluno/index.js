@@ -4,6 +4,7 @@ import { get } from 'lodash';
 import { PropTypes } from 'prop-types';
 import { Form } from './styled';
 
+// eslint-disable-next-line react/prop-types
 export default function Aluno({ match }) {
   const id = get(match, 'params.id', 0);
   const [nome, setNome] = useState('');
@@ -72,5 +73,6 @@ export default function Aluno({ match }) {
 }
 
 Aluno.PropTypes = {
+  // eslint-disable-next-line no-undef
   match: PropTypes.shape({}), isRequired,
 };
